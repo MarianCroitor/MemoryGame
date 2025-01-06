@@ -5,67 +5,78 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-
-    public const int gridRow = 2;
-     public const int gridCols = 4;
-    public const float offsetX = 2f;
-     public const float offsetY = 2.5f;
+   
+    public int gridRows = 2; 
+    public int gridCols = 4;
+    public float offsetX = 2f; 
+    public float offsetY = 2.5f; 
 
     private int score;
 
     private MemoryCard firstRevealed;
     private MemoryCard secondRevealed;
 
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
-    public bool canReveal
-    {
-        get { return secondRevealed == null; }
-    }
-
-
+   
+    public bool canReveal => secondRevealed == null;
 
     [SerializeField] MemoryCard originalCard;
     [SerializeField] Sprite[] images;
     [SerializeField] TMP_Text scoreLabel;
 
+    public void Restart()
+
+    {
+
+        SceneManager.LoadScene("SampleScene");
+
+    }
     void Start()
     {
         Vector3 startPos = originalCard.transform.position;
-        int[] numbers = { 0, 0, 1, 1, 2, 2, 3, 3 };
+        int numCards = gridRows * gridCols;
+        int[] numbers = new int[numCards];
+
+       
+        if (images.Length < numCards / 2)
+        {
+            Debug.LogError("Ќедостаточно изображений дл€ количества карт!");
+            return; 
+        }
+
+       
+        for (int i = 0; i < numCards / 2; i++)
+        {
+            numbers[i * 2] = i;      
+            numbers[i * 2 + 1] = i;  
+        }
+
         numbers = ShuffleArray(numbers);
 
-        for (int i = 0; i< gridCols; i++)
+        for (int i = 0; i < gridCols; i++)
         {
-            for (int j = 0; j< gridRow; j++)
+            for (int j = 0; j < gridRows; j++)
             {
                 MemoryCard card;
-                if(i == 0 && j == 0)
+                if (i == 0 && j == 0)
                 {
                     card = originalCard;
                 }
                 else
                 {
-                    card = Instantiate(originalCard) as MemoryCard;
+                    card = Instantiate(originalCard);
+
+                    int index = j * gridCols + i;
+                    int id = numbers[index];
+                    card.SetCard(id, images[id]);
+
+                    float posX = (offsetX * i) + startPos.x;
+                    float posY = -(offsetY * j) + startPos.y;
+                    card.transform.position = new Vector3(posX, posY, startPos.z);
                 }
-                int index = j * gridCols + i;
-                int id = numbers[index];
-                card.SetCard(id, images[id]);
-
-                float posX =(offsetX * i) + startPos.x;
-                float posY = -(offsetY * j) + startPos.y;
-                card.transform.position = new Vector3(posX, posY, startPos.z);
-
-         
             }
-            
+
         }
-        
-        
-    }
+}
     public void CardRevealed(MemoryCard card)
     {
         if(firstRevealed == null)
