@@ -36,18 +36,16 @@ public class SceneController : MonoBehaviour
         int numCards = gridRows * gridCols;
         int[] numbers = new int[numCards];
 
-       
         if (images.Length < numCards / 2)
         {
-            Debug.LogError("Ќедостаточно изображений дл€ количества карт!");
-            return; 
+            Debug.LogError("Not enough images for the number of cards!");
+            return;
         }
 
-       
         for (int i = 0; i < numCards / 2; i++)
         {
-            numbers[i * 2] = i;      
-            numbers[i * 2 + 1] = i;  
+            numbers[i * 2] = i;
+            numbers[i * 2 + 1] = i;
         }
 
         numbers = ShuffleArray(numbers);
@@ -56,26 +54,22 @@ public class SceneController : MonoBehaviour
         {
             for (int j = 0; j < gridRows; j++)
             {
-                MemoryCard card;
-                if (i == 0 && j == 0)
-                {
-                    card = originalCard;
-                }
-                else
-                {
-                    card = Instantiate(originalCard);
+                
+                MemoryCard card = Instantiate(originalCard);
 
-                    int index = j * gridCols + i;
-                    int id = numbers[index];
-                    card.SetCard(id, images[id]);
+                int index = j * gridCols + i;
+                int id = numbers[index];
+                card.SetCard(id, images[id]);
 
-                    float posX = (offsetX * i) + startPos.x;
-                    float posY = -(offsetY * j) + startPos.y;
-                    card.transform.position = new Vector3(posX, posY, startPos.z);
-                }
+                float posX = (offsetX * i) + startPos.x;
+                float posY = -(offsetY * j) + startPos.y;
+                card.transform.position = new Vector3(posX, posY, startPos.z);
+
+                card.transform.SetParent(this.transform); 
             }
-
         }
+    
+
 }
     public void CardRevealed(MemoryCard card)
     {
