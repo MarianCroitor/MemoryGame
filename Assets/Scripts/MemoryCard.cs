@@ -19,11 +19,13 @@ public class MemoryCard : MonoBehaviour
     private void Start()
     {
         controller = Object.FindFirstObjectByType<SceneController>();
+        animator = GetComponent<Animator>();
         if (controller == null)
         {
-            Debug.LogError("SceneController not found in the scene!");
+            Debug.LogError("SceneController not found");
         }
-        animator = GetComponent<Animator>();
+       
+        StartCoroutine(StartFlip());
     }
 
     public void OnMouseDown()
@@ -38,12 +40,22 @@ public class MemoryCard : MonoBehaviour
 
     public void Unrevealed()
     {
-        animator.SetTrigger("Close"); 
-        StartCoroutine(ReenableCardBackAfterAnimation());
+        animator.SetTrigger("Close");
+        StartCoroutine(Reenable());
     }
 
-    private IEnumerator ReenableCardBackAfterAnimation()
+    private IEnumerator Reenable()
     {
+        yield return new WaitForSeconds(0.25f);
+        cardBack.SetActive(true);
+    }
+
+    private IEnumerator StartFlip()
+    {
+        cardBack.SetActive(false);
+        animator.SetTrigger("Open");
+        yield return new WaitForSeconds(3f);
+        animator.SetTrigger("Close");
         yield return new WaitForSeconds(0.25f);
         cardBack.SetActive(true);
     }
