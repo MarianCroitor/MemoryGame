@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 02ac48d77db7df541b7704c1a84875cc
+guid: 6fe7708011259ff4f83fe6a08ab74a65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3421541038116794562
-    second: Component 20_0
-  - first:
-      213: 2112189153562943048
-    second: Component 20_1
-  - first:
-      213: 4840314742888352465
-    second: Component 20_2
-  - first:
-      213: 7534608130751411249
-    second: Component 20_3
-  - first:
-      213: 8032141682517246269
-    second: Component 20_4
+      213: -2047118766126016225
+    second: Group 2 (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,79 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Component 20_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 29
-        width: 26
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3f80aecd8e3480d0800000000000000
-      internalID: -3421541038116794562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Component 20_1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 19
-        width: 102
-        height: 152
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 84e5d8428d0005d10800000000000000
-      internalID: 2112189153562943048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Component 20_2
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 29
-        width: 112
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1da42f21d904c2340800000000000000
-      internalID: 4840314742888352465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Component 20_3
+      name: Group 2 (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
-        height: 26
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1343533cc2e409860800000000000000
-      internalID: 7534608130751411249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Component 20_4
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 0
-        width: 112
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d318c0cdd46e77f60800000000000000
-      internalID: 8032141682517246269
+      spriteID: f19d50c045c2793e0800000000000000
+      internalID: -2047118766126016225
       vertices: []
       indices: 
       edges: []
@@ -234,12 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Component 20_0: -3421541038116794562
-      Component 20_1: 2112189153562943048
-      Component 20_2: 4840314742888352465
-      Component 20_3: 7534608130751411249
-      Component 20_4: 8032141682517246269
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

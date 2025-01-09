@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour
 
     {
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
 
     }
     void Start()
