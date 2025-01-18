@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      crescent-symbol_0: -6021835855328035415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
