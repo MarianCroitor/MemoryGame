@@ -15,6 +15,7 @@ public class SceneController : MonoBehaviour
 
     private MemoryCard firstRevealed;
     private MemoryCard secondRevealed;
+    public GameObject WinScene;
 
    
     public bool canReveal => secondRevealed == null;
@@ -23,12 +24,12 @@ public class SceneController : MonoBehaviour
     [SerializeField] Sprite[] images;
     [SerializeField] TMP_Text scoreLabel;
 
-    public void Restart()
-
+    void winConditions()
     {
-
-        SceneManager.LoadScene("Level1");
-
+        if (score == gridCols * gridRows / 2)
+        {
+            WinScene.gameObject.SetActive(true);
+        }
     }
     void Start()
     {
@@ -89,6 +90,7 @@ public class SceneController : MonoBehaviour
         {
             score++;
             scoreLabel.text = $"Score: {score}";
+            winConditions();
         }
         else
         {
