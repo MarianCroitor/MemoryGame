@@ -9,10 +9,12 @@ public class SceneController : MonoBehaviour
     public int gridRows = 2; 
     public int gridCols = 4;
     public float offsetX = 2f; 
-    public float offsetY = 2.5f; 
+    public float offsetY = 2.5f;
+    public int winScore;
 
     private int score;
-
+    [SerializeField] GameObject winMenu;
+   
     private MemoryCard firstRevealed;
     private MemoryCard secondRevealed;
 
@@ -23,13 +25,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] Sprite[] images;
     [SerializeField] TMP_Text scoreLabel;
 
-    public void Restart()
-
-    {
-
-        SceneManager.LoadScene("Level1");
-
-    }
+    
     void Start()
     {
         Vector3 startPos = originalCard.transform.position;
@@ -83,12 +79,21 @@ public class SceneController : MonoBehaviour
             StartCoroutine(CheckMatch());
         }
     }
+    public void WinMenu()
+
+    {
+        winMenu.SetActive(true);
+    }
     private IEnumerator CheckMatch()
     {
         if(firstRevealed.Id == secondRevealed.Id)
         {
             score++;
             scoreLabel.text = $"Score: {score}";
+            if(score >=winScore)
+            {
+                WinMenu();
+            }
         }
         else
         {

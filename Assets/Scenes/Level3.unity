@@ -1886,6 +1886,7 @@ MonoBehaviour:
   gridCols: 10
   offsetX: 1.15
   offsetY: 1.65
+  winScore: 20
   originalCard: {fileID: 7154222250148305896, guid: 70ada4165beb0e14386fce7b883d4e48, type: 3}
   images:
   - {fileID: -736421745111370832, guid: 020ea820affb09341b03a8a5e53d4dee, type: 3}
@@ -1901,14 +1902,14 @@ MonoBehaviour:
   - {fileID: -2745750317705100669, guid: e13b51f0e63894144b5d06a7237b5797, type: 3}
   - {fileID: -5658459427163533285, guid: a990028f4f858eb468448e4ea1bae9d5, type: 3}
   - {fileID: 375234343424825299, guid: 85cf225f10498634dbe5d5f2991662cf, type: 3}
-  - {fileID: -927007717301248101, guid: ded8cfe0b10bea94b9426a0f69bd1d1c, type: 3}
-  - {fileID: -5772030970582943076, guid: 4dd9278a45bb8484883c168b765e5a60, type: 3}
+  - {fileID: 1510203895091996636, guid: 4bea7c4a4e76689419d8447d3ce7d766, type: 3}
+  - {fileID: 7059044248410149231, guid: 18a935aab865a5d4488735b0f7a6b329, type: 3}
   - {fileID: 247624016272463130, guid: b8004b331cc8c7343a63b9183d96dc71, type: 3}
   - {fileID: 9107507248306141202, guid: 9416522d2d83e0c4cbcaf40bb3b2daab, type: 3}
   - {fileID: -3552854639642210176, guid: 2e3c4d093599c0d4284145e2d5079138, type: 3}
   - {fileID: 6938578073681366240, guid: af9d1f34dadd9024bae59a68a770e9fb, type: 3}
   - {fileID: 5632304798607529730, guid: a6634a06c9137ec48a061c94abdac135, type: 3}
-  - {fileID: 1510203895091996636, guid: 4bea7c4a4e76689419d8447d3ce7d766, type: 3}
+  - {fileID: -927007717301248101, guid: ded8cfe0b10bea94b9426a0f69bd1d1c, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

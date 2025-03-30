@@ -1722,6 +1722,7 @@ MonoBehaviour:
   gridCols: 6
   offsetX: 1.5
   offsetY: 2.1
+  winScore: 9
   originalCard: {fileID: 7154222250148305896, guid: ebbab9e4f43698742bdd7f9186205aae, type: 3}
   images:
   - {fileID: 4198691977895506061, guid: b0fdd432a7cf87e4f8d3e430477be2c0, type: 3}
