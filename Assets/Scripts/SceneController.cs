@@ -14,6 +14,7 @@ public class SceneController : MonoBehaviour
 
     private int score;
     [SerializeField] GameObject winMenu;
+    [SerializeField] GameObject pauseBtn;
    
     private MemoryCard firstRevealed;
     private MemoryCard secondRevealed;
@@ -25,7 +26,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] Sprite[] images;
     [SerializeField] TMP_Text scoreLabel;
 
-    
+
     void Start()
     {
         Vector3 startPos = originalCard.transform.position;
@@ -50,7 +51,7 @@ public class SceneController : MonoBehaviour
         {
             for (int j = 0; j < gridRows; j++)
             {
-                
+
                 MemoryCard card = Instantiate(originalCard);
 
                 int index = j * gridCols + i;
@@ -61,12 +62,13 @@ public class SceneController : MonoBehaviour
                 float posY = -(offsetY * j) + startPos.y;
                 card.transform.position = new Vector3(posX, posY, startPos.z);
 
-                card.transform.SetParent(this.transform); 
+                card.transform.SetParent(this.transform);
             }
         }
-    
 
-}
+
+    }
+
     public void CardRevealed(MemoryCard card)
     {
         if(firstRevealed == null)
@@ -79,10 +81,12 @@ public class SceneController : MonoBehaviour
             StartCoroutine(CheckMatch());
         }
     }
-    public void WinMenu()
-
+    public IEnumerator WinMenu()
     {
+        pauseBtn.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
         winMenu.SetActive(true);
+
     }
     private IEnumerator CheckMatch()
     {
@@ -92,7 +96,8 @@ public class SceneController : MonoBehaviour
             scoreLabel.text = $"Score: {score}";
             if(score >=winScore)
             {
-                WinMenu();
+                 
+               StartCoroutine( WinMenu());
             }
         }
         else
@@ -116,6 +121,14 @@ public class SceneController : MonoBehaviour
             newArray[r] = tmp;
         }
         return newArray;
+    }
+    public void StartMainMenu()
+    {
+        SceneManager.LoadScene("_Menu");
+    }
+    public void StartNextLevel(string num)
+    {
+        SceneManager.LoadScene("Level" + num);
     }
 
     // Update is called once per frame
