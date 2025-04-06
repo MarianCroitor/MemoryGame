@@ -11,6 +11,7 @@ public class SceneController : MonoBehaviour
     public float offsetX = 2f; 
     public float offsetY = 2.5f;
     public int winScore;
+    private static bool muted;
 
     private int score;
     [SerializeField] GameObject winMenu;
@@ -29,6 +30,7 @@ public class SceneController : MonoBehaviour
 
     void Start()
     {
+
         Vector3 startPos = originalCard.transform.position;
         int numCards = gridRows * gridCols;
         int[] numbers = new int[numCards];
@@ -38,6 +40,8 @@ public class SceneController : MonoBehaviour
             Debug.LogError("Not enough images for the number of cards!");
             return;
         }
+
+
 
         for (int i = 0; i < numCards / 2; i++)
         {
@@ -67,6 +71,29 @@ public class SceneController : MonoBehaviour
         }
 
 
+    }
+    public void Mute()
+    {       
+        AudioSource music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+
+        if (muted==true)
+        {
+            music.volume = 0.5f;
+            muted = false;
+        }
+        else
+        {
+            music.volume = 0.0f;
+            muted = true;
+        }
+        
+        
+        
+    }
+    
+    public void PlayFlipSound()
+    {
+        GetComponent<AudioSource>().Play();
     }
 
     public void CardRevealed(MemoryCard card)

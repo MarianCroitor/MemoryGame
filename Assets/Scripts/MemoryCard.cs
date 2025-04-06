@@ -37,6 +37,11 @@ public class MemoryCard : MonoBehaviour
             controller.CardRevealed(this);
         }
     }
+    public void PlayFlipSound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
 
     public void Unrevealed()
     {
