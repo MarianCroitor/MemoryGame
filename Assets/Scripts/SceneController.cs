@@ -120,7 +120,7 @@ public class SceneController : MonoBehaviour
         if(firstRevealed.Id == secondRevealed.Id)
         {
             score++;
-            scoreLabel.text = $"Score: {score}";
+            scoreLabel.text = $"Score: {score}/{winScore}";
             if(score >=winScore)
             {
                  
